@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+{include file="Public/header"}
+
+<body>
+	<div class="wrap-body">
+		<div id='cssmenu' class="align-center">
+			<ul>
+			   <li><a href='index.html'><span>Home</span></a></li>
+			   <li class=' has-sub'><a href='#'><span>Blog</span></a>
+				  <ul >
+					 <li class='has-sub'><a href='#'><span>Item 1</span></a>
+						<ul>
+						   <li><a href='#'><span>Sub Item</span></a></li>
+						   <li class='last'><a href='#'><span>Sub Item</span></a></li>
+						</ul>
+					 </li>
+					 <li class='has-sub'><a href='#'><span>Item 2</span></a>
+						<ul>
+						   <li><a href='#'><span>Sub Item</span></a></li>
+						   <li class='last'><a href='#'><span>Sub Item</span></a></li>
+						</ul>
+					 </li>
+				  </ul>
+			   </li>
+			   <li class="active"><a href='single.html'><span>About</span></a></li>
+			   <li class='last'><a href='contact.html'><span>Contacts</span></a></li>
+			</ul>
+		</div>
+		<header class="">
+			<div class="logo">
+				<a href="#"><img src="__PUBLIC__/static/index/images/logo.png" /></a>
+			</div>
+		</header>
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<!-----------------Content-Box-------------------->
+				<article class="post zerogrid">
+					<div class="row wrap-post"><!--Start Box-->
+						<div class="entry-header">
+							<span class="time"></span>
+							
+							<h2 class="entry-title"><a href="#">{$artis.time|date='Y-m-d',###}</a></h2>
+							<span class="cat-links"><a href="#">{$artis.title}</a></span>
+						</div>
+						<div class="post-thumbnail-wrap">
+							 {if condition="$artis['pic'] neq ''"}
+                                <img height="50px" src="__PUBLIC__{$artis.pic}">
+                                {else/}
+                                暂无缩略图
+                                {/if}
+                                
+						</div>
+						<div class="entry-content">
+							<div class="excerpt"> {$artis.content}</div>
+						</div>
+					</div>
+				</article>
+				
+				
+				</div>
+			</div>
+		</section>
+	{include file="Public/footer"}
+	</div>
+</body>
+</html>
